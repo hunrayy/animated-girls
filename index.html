@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated girls</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <p>Mary</p>
+        <div class="hair"></div>
+            <div class="bottom">
+                <span></span>
+            </div>
+            <div class="head">
+                <div class="neck"></div>
+                <div class="face">
+                    <div class="eyes">
+                        <span class="eye"><strong></strong></span>
+                        <span class="eye"><strong></strong></span>
+                    </div>
+                <div class="mouth"></div>
+            </div>
+         </div>
+
+         <div class="blush1"></div>
+         <div class="blush2"></div>
+    </div>
+
+    <div class="box">
+        <p>Josephine</p>
+        <div class="hair"></div>
+        <div class="bottom">
+            <span></span>
+        </div>
+        <div class="head">
+            <div class="neck"></div>
+            <div class="face two">
+                <div class="eyes">
+                    <span class="eye"><strong></strong></span>
+                    <span class="eye"><strong></strong></span>
+                </div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+
+</div>
+    <script>
+        document.querySelector('body').addEventListener("mousemove", eyeball);
+        function eyeball(){
+            let eye = document.querySelectorAll('.eye strong');
+            eye.forEach(function(eye){
+                let x = (eye.getBoundingClientRect().left) + (eye.
+                clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.
+                clientHeight / 2);
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                let rot = (radian * (180 / Math.PI) * -1) + 270;
+                eye.style.transform = "rotate("+ rot +"deg)"
+            })
+        }
+
+
+        firstaudio = new Audio("./audios/first.mp3")
+        secondaudio = new Audio("./audios/second.mp3")
+        thirdaudio = new Audio("./audios/third.mp3")
+        fourthaudio = new Audio("./audios/fourth.mp3")
+        fifthaudio = new Audio("./audios/fifth.mp3")
+        sixthaudio = new Audio("./audios/sixth.mp3")
+        seventhaudio = new Audio("./audios/seventh.mp3")
+        eighthaudio = new Audio("./audios/eighth.mp3")
+
+        document.querySelector(".face").addEventListener("mouseover", ()=> {
+       
+                seventhaudio.play()
+                firstaudio.play()
+                secondhaudio.play()
+                thirdaudio.play()
+                fourthaudio.play()
+                fifthaudio.play()
+                sixthaudio.play()
+         
+            // if(firstaudio.play() == true){
+            //     secondaudio.play() = false
+            //     thirdaudio.play() = false
+            // }
+            // if(secondaudio.play() == true){
+            //     firstaudio.play() = false
+            //     thirdaudio.play() = false
+            // }
+            // if(thirdaudio.play() == true){
+            //     firstaudio.play() = false
+            //     secondaudio.play() = false
+            // }
+
+
+            // firstaudio.play()
+            // secondaudio.play()
+            // thirdaudio.play()
+
+
+
+
+
+
+            // let player = [
+            //     firstaudio.play(), secondaudio.play(), thirdaudio.play(), fourthaudio.play(),
+            //     fifthaudio.play(), sixthaudio.play(), seventhaudio.play()
+            // ]
+            // let random = Math.floor(Math.random() * player.length)
+            // return player[random]
+            document.querySelector(".blush1").style.display = "none"
+            document.querySelector(".blush2").style.display = "none"
+        })
+        document.querySelector(".face").addEventListener("mouseout", ()=> {
+           
+            seventhaudio.pause()
+
+            document.querySelector(".blush1").style.display = "block"
+            document.querySelector(".blush2").style.display = "block"
+        })
+
+
+
+        document.querySelector(".two").addEventListener("mouseover", ()=> {
+            eighthaudio.play()
+            // eighthaudio.loop = true;
+        })
+        document.querySelector(".two").addEventListener("mouseout", ()=> {
+            eighthaudio.pause()
+        })
+
+    </script>
+</body>
+</html>
