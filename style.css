@@ -13,6 +13,9 @@ body{
     /* background: #edf8ff; */
     background-color: rgb(51, 32, 32);
 }
+.hshs{
+    background-color: red;
+}
 
 .box{
     position: relative;
